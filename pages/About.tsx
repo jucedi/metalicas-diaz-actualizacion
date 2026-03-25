@@ -1,76 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const About: React.FC = () => {
   return (
-    <div className="pt-24 pb-20 bg-brand-ice min-h-screen">
-      
-      {/* Header */}
-      <div className="bg-brand-navy text-white py-16 mb-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
-          >
-            Nuestra Historia
-          </motion.h1>
-          <p className="text-xl text-brand-softSteel max-w-3xl mx-auto">
-            De un pequeño taller familiar a referentes en innovación metalúrgica.
-          </p>
-        </div>
+    <div className="pb-20">
+      <Helmet>
+        <title>Sobre Nosotros | 20 Años de Experiencia - Metálicas Díaz</title>
+        <meta name="description" content="Conoce la historia de Metálicas Díaz. Dos décadas liderando la transformación del metal, con un equipo altamente capacitado y comprometido con la excelencia." />
+      </Helmet>
+
+      <div className="bg-brand-navy py-20 text-center text-white">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Sobre Nosotros</h1>
+        <p className="text-lg text-gray-300">Historia, pasión y compromiso.</p>
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        
-        {/* Story Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div>
-            <img 
-              src="https://picsum.photos/800/600?random=30" 
-              alt="Taller original" 
-              className="rounded-2xl shadow-xl w-full"
-            />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold text-brand-navy mb-6">Orígenes y Evolución</h2>
-            <div className="space-y-4 text-brand-steel leading-relaxed text-lg">
-              <p>
-                Fundada en 2003 por Carlos Díaz, Metálicas Díaz comenzó como un modesto taller de herrería artesanal. La pasión por el detalle y la robustez de nuestros trabajos pronto nos ganó la confianza de arquitectos locales.
-              </p>
-              <p>
-                En 2015, dimos el salto a la industria 4.0 incorporando tecnología de corte láser y diseño 3D, permitiéndonos abordar proyectos de gran envergadura sin perder nuestra esencia artesanal.
-              </p>
-              <p>
-                Hoy, **Metálicas Díaz 2.0** representa la fusión perfecta entre la solidez del acero y la visión de la arquitectura moderna.
-              </p>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+        >
+          <div className="prose prose-lg text-gray-600 max-w-none">
+            <h3 className="text-2xl font-bold text-brand-navy mb-4">Nuestra Historia</h3>
+            <p className="mb-8">
+              Fundada en el año 2000, Metálicas Díaz comenzó como un modesto taller familiar enfocado en la cerrajería tradicional. Con el paso de los años, y gracias a la confianza de nuestros clientes, evolucionamos para integrar tecnologías modernas en metalistería industrial.
+            </p>
+            <p className="mb-8">
+              Hoy, bajo la segunda generación de liderazgo, hemos dado un salto hacia la innovación arquitectónica, integrando líneas de aluminio de alta prestación y siendo pioneros en la fabricación de <strong>Tiny Houses</strong> en la región.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8 my-12">
+              <div className="bg-brand-light p-6 rounded-xl border-l-4 border-brand-navy">
+                <h4 className="text-xl font-bold text-brand-navy mb-2">Misión</h4>
+                <p className="text-sm">
+                  Proveer soluciones metálicas y modulares que combinen seguridad, funcionalidad y estética, superando las expectativas de calidad de nuestros clientes.
+                </p>
+              </div>
+              <div className="bg-brand-light p-6 rounded-xl border-l-4 border-brand-gold">
+                <h4 className="text-xl font-bold text-brand-navy mb-2">Visión</h4>
+                <p className="text-sm">
+                  Ser reconocidos en 2030 como la empresa líder en construcción modular y arquitectura metálica sostenible a nivel nacional.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative rounded-xl overflow-hidden h-[400px] mt-8">
+              <img 
+  src="/nosotros-taller.jpg" // ¡Foto real de Sobre Nosotros conectada!
+  alt="Nuestro Taller - Metálicas Díaz" 
+  className="w-full h-full object-cover"
+/>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                  <p className="font-bold text-lg">Nuestro equipo en acción</p>
+                </div>
             </div>
           </div>
-        </div>
-
-        {/* Mission / Vision Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-brand-navy"
-          >
-            <h3 className="text-2xl font-bold text-brand-navy mb-4">Misión</h3>
-            <p className="text-brand-steel text-lg">
-              Proveer soluciones metálicas integrales que superen las expectativas de durabilidad y estética, impulsando el éxito de los proyectos de nuestros clientes mediante innovación constante y compromiso inquebrantable con la calidad.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-brand-gold"
-          >
-            <h3 className="text-2xl font-bold text-brand-navy mb-4">Visión</h3>
-            <p className="text-brand-steel text-lg">
-              Ser la empresa líder en construcción modular y carpintería metálica de alta gama a nivel nacional, reconocidos por revolucionar la forma de habitar espacios a través de nuestras Tiny Houses y estructuras sostenibles.
-            </p>
-          </motion.div>
-        </div>
-
+        </motion.div>
       </div>
     </div>
   );

@@ -3,23 +3,28 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Clock, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
+import { Helmet } from 'react-helmet-async';
 
 const Home: React.FC = () => {
   return (
     <div className="w-full">
+      {/* Etiquetas SEO Dinámicas */}
+      <Helmet>
+        <title>Inicio | Metálicas Díaz - Soluciones Metálicas y Tiny Houses</title>
+        <meta name="description" content="Ingeniería de precisión y diseño industrial. Especialistas en metalistería, aluminio arquitectónico y construcción de Tiny Houses." />
+      </Helmet>
+
       {/* Hero Section */}
       <section 
         className="relative h-screen min-h-[600px] flex items-center justify-center bg-fixed bg-cover bg-center overflow-hidden"
-        style={{ 
-          // Referencia a la imagen en tu carpeta public
-          backgroundImage: 'url("/imagenprincipal.svg")' 
-        }}
+        style={{ backgroundImage: 'url("/imagenprincipal.svg")' }}
       >
-        {/* Overlays para mejorar legibilidad del texto */}
-        <div className="absolute inset-0 bg-brand-navy/60 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent z-10"></div>
+        {/* Capas oscuras con pointer-events-none para no bloquear los clics */}
+        <div className="absolute inset-0 bg-brand-navy/60 z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent z-10 pointer-events-none"></div>
 
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+        {/* Contenedor de contenido con pointer-events-auto */}
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto pointer-events-auto">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,17 +73,18 @@ const Home: React.FC = () => {
               { 
                 title: "Innovación Técnica", 
                 desc: "Utilizamos maquinaria de última generación para cortes y soldaduras de precisión milimétrica en cada estructura.", 
-                img: "/pilar-innovacion.jpg" // Asegúrate de tener estas fotos en public/
+                // Cuando tengas tu imagen local, cambia esto por "/tu-imagen.jpg"
+                img: "/pilar_innovacion.jpg" 
               },
               { 
                 title: "Diseño Moderno", 
                 desc: "Fusionamos la robustez industrial con una estética contemporánea para crear espacios y piezas únicas.", 
-                img: "/pilar-diseno.jpg" 
+                img: "/pilar_diseno.jpg" 
               },
               { 
                 title: "Sostenibilidad", 
                 desc: "Procesos optimizados para reducir residuos y el uso de materiales 100% reciclables y duraderos.", 
-                img: "/pilar-sostenibilidad.jpg" 
+                img: "/pilar_sostenibilidad.jpg" 
               }
             ].map((item, idx) => (
               <motion.div 
@@ -115,7 +121,7 @@ const Home: React.FC = () => {
                 <ShieldCheck size={40} />
               </div>
               <h3 className="text-2xl font-bold mb-3">Garantía Certificada</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">Todos nuestros materiales y procesos de soldadura cuentan con los más altos estándares de calidad.</p>
+              <p className="text-gray-300 text-sm leading-relaxed">Todos nuestros materiales y procesos de fabricación cuentan con los más altos estándares de calidad.</p>
             </div>
             
             <div className="p-8 flex flex-col items-center border-y md:border-y-0 md:border-x border-white/10">
@@ -131,7 +137,7 @@ const Home: React.FC = () => {
                 <Award size={40} />
               </div>
               <h3 className="text-2xl font-bold mb-3">+20 Años Liderando</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">Dos décadas de experiencia transformando el metal respaldan cada uno de nuestros proyectos entregados.</p>
+              <p className="text-gray-300 text-sm leading-relaxed">Dos décadas de experiencia en el sector respaldan cada uno de nuestros proyectos entregados.</p>
             </div>
           </div>
         </div>
