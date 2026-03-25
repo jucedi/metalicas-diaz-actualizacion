@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const WhatsAppBtn: React.FC = () => {
   // Configuración de contacto
-  const phoneNumber = '573001234567'; 
+  const phoneNumber = '573152724688'; 
   const message = 'Hola Metálicas Díaz, me gustaría cotizar un proyecto.';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
